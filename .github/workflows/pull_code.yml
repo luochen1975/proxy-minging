@@ -1,0 +1,19 @@
+name: Pull Code
+
+on:
+push:
+branches:
+- main # 在 main 分支有更新时触发
+
+jobs:
+pull_code:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout repository
+uses: actions/checkout@v2
+
+- name: Pull code from upstream
+run: |
+git remote add upstream https://github.com/anaer/proxy-minging.git
+git fetch upstream main
+git merge upstream/main --ff-only
