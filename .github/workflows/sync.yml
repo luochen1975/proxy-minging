@@ -16,6 +16,3 @@ jobs:
       upstream_repo: anser/proxy-minging
       upstream_sync_branch: main
       test_mode: false
-        run: |
-          echo "[Error] 自动同步失败，请检查 workflow 文件和仓库权限，或手动同步。"
-          exit 1
